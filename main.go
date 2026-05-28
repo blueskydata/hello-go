@@ -8,4 +8,6 @@ func main() {
 
 	ret := add(3, 4)
 	fmt.Printf("The result is %d\n", ret)
+
+	fmt.Println("浪你妈妈的呀，俺是滨海人")
 }
