@@ -27,7 +27,7 @@ jobs:
 
       - name: Build success
         run: echo "✅ Go项目CICD构建成功！"
-        
+
       - name: Upload artifact
         uses: actions/upload-artifact@v4
         with:
