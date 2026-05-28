@@ -1,0 +1,29 @@
+name: Go CI/CD Demo
+
+# 触发规则：push到main分支 或 手动点击运行都可以
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Go
+        uses: actions/setup-go@v5
+        with:
+          go-version: '1.23'
+
+      - name: Go format check
+        run: go fmt ./...
+
+      - name: Go build
+        run: go build -o hello-demo main.go
+
+      - name: Build success
+        run: echo "✅ Go项目CICD构建成功！"
